@@ -4,20 +4,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 
 /**
  * Created by Administrator on 2019/2/27.
  */
 @RestController
-@RequestMapping("/hello")
+@RequestMapping("/list")
 public class DemoController {
     @GetMapping
-    public Map<String, Object> hello () {
-        Map<String, Object> result = new HashMap<>();
-        result.put("message", "Hello world!");
-        System.out.println(result);
-        return result;
+    public List<DemoData> getList () {
+        List<DemoData> list = new ArrayList<>();
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(2016, Calendar.OCTOBER, 2, 0, 0, 0);
+        list.add(new DemoData(1, "West World", 1, calendar.getTime()));
+        System.out.println(list);
+        return list;
     }
 }
