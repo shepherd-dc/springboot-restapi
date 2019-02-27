@@ -21,6 +21,8 @@ public class DemoController {
         Calendar calendar = Calendar.getInstance();
         calendar.set(2016, Calendar.OCTOBER, 2, 0, 0, 0);
         list.add(new DemoData(1, "West World", 1, calendar.getTime()));
+//        calendar.set(2012, Calendar.SEPTEMBER, 22, 0, 0, 0);
+//        list.add(new DemoData(2, "Person of Interest", 5, calendar.getTime()));
         System.out.println(list);
         return list;
     }
