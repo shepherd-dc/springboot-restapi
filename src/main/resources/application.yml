@@ -5,3 +5,8 @@ spring:
     serialization:
       write-dates-as-timestamps: false
 
+logging:
+  file: target/app.log
+  level:
+    ROOT: WARN
+    com.shepherd: TRACE

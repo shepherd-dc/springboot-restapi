@@ -1,14 +1,25 @@
 package com.shepherd.demo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import javax.validation.constraints.*;
 import java.util.Date;
 
 /**
  * Created by Administrator on 2019/2/27.
  */
 public class DemoData {
+//    @Null
     private int id;
+    @NotNull
     private String name;
+    @DecimalMin("1")
     private int seasonCount;
+
+    //如果想用long型的timestamp表示日期，可用： @JsonFormat(shape = JsonFormat.Shape.NUMBER)
+    @JsonFormat(timezone="GMT+8", pattern="yyyy-MM-dd")
+    //@Past表示只接受过去的时间，比当前时间还晚的被认为不合格
+    @Past
     private Date originRelease;
 
     DemoData(){}
